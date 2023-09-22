@@ -1,0 +1,46 @@
+@import '../../styles/variables.scss';
+
+.header {
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.logo {
+			display: flex;
+			align-items: center;
+			column-gap: 8px;
+
+			img {
+				width: 40px;
+				height: 40px;
+			}
+
+			h1 {
+				font-size: 1.2rem;
+				font-weight: 600;
+				color: $primary-color;
+			}
+		}
+
+		.navigation {
+			.menu {
+				.menuItem {
+				}
+			}
+		}
+
+		.icons {
+			.icon {
+			}
+		}
+
+		.mobileMenu {
+			display: none;
+		}
+	}
+}
