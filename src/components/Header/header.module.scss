@@ -22,25 +22,77 @@
 
 			h1 {
 				font-size: 1.2rem;
-				font-weight: 600;
+				font-weight: 700;
 				color: $primary-color;
 			}
 		}
 
 		.navigation {
 			.menu {
+				display: flex;
+				align-items: center;
+				column-gap: 2.7rem;
+
 				.menuItem {
+					a {
+						color: $primary-color;
+						font-weight: 500;
+						cursor: pointer;
+					}
 				}
 			}
 		}
 
 		.icons {
+			display: flex;
+			align-items: center;
+			column-gap: 1rem;
+
 			.icon {
+				position: relative;
+
+				.badge {
+					position: absolute;
+					top: 25%;
+					right: -8%;
+					width: 15px;
+					height: 15px;
+					content: '';
+					background-color: $primary-color;
+					color: #fff;
+					border-radius: 50px;
+					font-size: 0.6rem;
+					font-weight: 600;
+					z-index: 10;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+
+				i {
+					font-size: 1.4rem;
+					color: $primary-color;
+					cursor: pointer;
+				}
+			}
+
+			span {
+				img {
+					width: 30px;
+					height: 30px;
+					cursor: pointer;
+				}
 			}
 		}
 
 		.mobileMenu {
 			display: none;
+			font-size: 1.3rem;
+			color: $primary-color;
 		}
 	}
+}
+
+.active {
+	font-weight: 700 !important;
 }

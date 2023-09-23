@@ -4,6 +4,9 @@ import { Container, Row } from 'reactstrap'
 import { ecoLogo, userIcon } from '../../assets/images'
 import { NavLink } from 'react-router-dom'
 import { navigation } from '../../data/ui'
+import { motion } from 'framer-motion'
+
+const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : '')
 
 export const Header = () => {
 	return (
@@ -15,7 +18,6 @@ export const Header = () => {
 							<img src={ecoLogo} alt="logo website" />
 							<div>
 								<h1>Multimart</h1>
-								<p>Since 1995</p>
 							</div>
 						</div>
 
@@ -23,7 +25,9 @@ export const Header = () => {
 							<ul className={styles.menu}>
 								{navigation.map(link => (
 									<li key={link.path} className={styles.menuItem}>
-										<NavLink to={link.path}>{link.display}</NavLink>
+										<NavLink to={link.path} className={activeLink}>
+											{link.display}
+										</NavLink>
 									</li>
 								))}
 							</ul>
@@ -32,13 +36,19 @@ export const Header = () => {
 						<div className={styles.icons}>
 							<span className={styles.icon}>
 								<i className="ri-heart-line" />
+								<span className={styles.badge}>1</span>
 							</span>
 							<span className={styles.icon}>
 								<i className="ri-shopping-bag-line" />
+								<span className={styles.badge}>2</span>
 							</span>
 
 							<span>
-								<img src={userIcon} alt="current user icon" />
+								<motion.img
+									whileTap={{ scale: 1.2 }}
+									src={userIcon}
+									alt="current user icon"
+								/>
 							</span>
 						</div>
 
