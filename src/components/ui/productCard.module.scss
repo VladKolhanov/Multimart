@@ -1,0 +1,50 @@
+@import 'styles/variables.scss';
+
+.item {
+	cursor: pointer;
+
+	.img {
+	}
+
+	.productInfo {
+		padding: 8px;
+
+		.productName {
+			font-size: 1.2rem;
+			color: $primary-color;
+			font-weight: 600;
+			margin-top: 15px;
+
+			a:hover {
+				color: inherit;
+			}
+		}
+
+		span {
+			display: block;
+			text-align: center;
+			font-size: 0.9rem;
+		}
+	}
+
+	.costInfo {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 8px;
+
+		.price {
+			color: $primary-color;
+			font-size: 1.3rem;
+			font-weight: 500;
+		}
+
+		i {
+			font-size: 1.2rem;
+			padding: 5px;
+			background: $primary-color;
+			color: #fff;
+			border-radius: 50%;
+		}
+	}
+}

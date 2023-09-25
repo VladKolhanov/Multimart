@@ -30,7 +30,7 @@ import productImg23 from '../assets/images/wireless-01.png'
 
 import productImg25 from '../assets/images/wireless-03.png'
 
-const products = [
+export const products = [
 	{
 		id: '01',
 		productName: 'Stone and Beam Westview ',

@@ -1,12 +1,12 @@
-import 'bootstrap/dist/css/bootstrap.css'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import 'remixicon/fonts/remixicon.css'
 
 import { RouterProvider } from 'react-router-dom'
-import { routers } from './routers/Routers'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'remixicon/fonts/remixicon.css'
 
 import './styles/global.scss'
+import { routers } from './routers/Routers'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

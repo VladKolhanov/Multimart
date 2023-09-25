@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const Helmet = ({ children, title }) => {
 	document.title = 'Multimart - ' + title
 

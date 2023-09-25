@@ -4,14 +4,14 @@ import {
 	createBrowserRouter,
 	createRoutesFromChildren,
 } from 'react-router-dom'
-import { Layout } from '../Layout/Layout'
-import { Cart } from '../pages/Cart'
-import { Checkout } from '../pages/Checkout'
-import { Home } from '../pages/Home'
-import { Login } from '../pages/Login'
-import { ProductDetails } from '../pages/ProductDetails'
-import { Shop } from '../pages/Shop'
-import { Signup } from '../pages/Signup'
+import { Layout } from 'layout/Layout'
+import { Cart } from 'pages/cart/Cart'
+import { Checkout } from 'pages/checkout/Checkout'
+import { Home } from 'pages/home/Home'
+import { Login } from 'pages/login/Login'
+import { ProductDetails } from 'pages/productDetails/ProductDetails'
+import { Shop } from 'pages/shop/Shop'
+import { Signup } from 'pages/signUp/Signup'
 
 export const routers = createBrowserRouter(
 	createRoutesFromChildren(
