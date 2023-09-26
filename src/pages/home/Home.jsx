@@ -6,20 +6,51 @@ import { Col, Container, Row } from 'reactstrap'
 
 import s from './home.module.scss'
 import { Helmet } from 'components/helmet/Helmet'
-import { heroImg } from 'assets/images'
+import { counterTimer, heroImg } from 'assets/images'
 import { Services } from 'components/services/Services'
 import { ProductsList } from 'components/ui/ProductsList'
-import products from 'data/products'
+import { products } from 'data/products'
+import { Clock } from 'components/ui/Clock'
 
 export const Home = () => {
-	const [chairProducts, setChairProducts] = useState(products)
+	const [sortProducts, setSordProducts] = useState(null)
 
 	useEffect(() => {
-		const filteredProducts = products.filter(
-			product => product.category === 'chair'
+		const filteredProducts = products.reduce(
+			(acc, product) => {
+				switch (product.category) {
+					case 'wireless':
+						acc.wireless.push(product)
+						break
+					case 'watch':
+						acc.watch.push(product)
+						break
+					case 'chair':
+						acc.chair.push(product)
+						break
+					case 'sofa':
+						acc.sofa.push(product)
+						break
+					case 'mobile':
+						acc.mobile.push(product)
+						break
+					default:
+						acc.other.push(product)
+						break
+				}
+				return acc
+			},
+			{
+				wireless: [],
+				watch: [],
+				chair: [],
+				sofa: [],
+				mobile: [],
+				other: [],
+			}
 		)
 
-		setChairProducts(filteredProducts)
+		setSordProducts(filteredProducts)
 	}, [])
 
 	const year = new Date().getFullYear()
@@ -61,7 +92,67 @@ export const Home = () => {
 						<Col lg="12" className="text-center">
 							<h2 className="section-title">Trending Products</h2>
 						</Col>
-						<ProductsList products={chairProducts} />
+						<ProductsList products={sortProducts?.chair} />
+					</Row>
+				</Container>
+			</section>
+
+			<section className={s.bestSales}>
+				<Container>
+					<Row>
+						<Col lg="12" className="text-center">
+							<h2 className="section-title">Best Sales</h2>
+						</Col>
+						<ProductsList products={sortProducts?.sofa} />
+					</Row>
+				</Container>
+			</section>
+
+			<section className={s.timerCount}>
+				<Container>
+					<Row>
+						<Col lg="6" md="6">
+							<div className={s.topContent}>
+								<h4>Limited Offers</h4>
+								<h3>Quality Armchair</h3>
+							</div>
+
+							<Clock />
+
+							<motion.button
+								whileTap={{ scale: 1.2 }}
+								className={`${s.btn} ${s.storeBtn}`}
+							>
+								<Link to="/shop">Visit Store</Link>
+							</motion.button>
+						</Col>
+
+						<Col lg="6" md="6" className="text-end">
+							<img src={counterTimer} alt="counter" />
+						</Col>
+					</Row>
+				</Container>
+			</section>
+
+			<section className={s.arrivals}>
+				<Container>
+					<Row>
+						<Col lg="12" className="text-center mb-5">
+							<h2 className="section-title">New Arrivals</h2>
+						</Col>
+						<ProductsList products={sortProducts?.mobile} />
+						<ProductsList products={sortProducts?.wireless} />
+					</Row>
+				</Container>
+			</section>
+
+			<section className={s.popularCategory}>
+				<Container>
+					<Row>
+						<Col lg="12" className="text-center mb-5">
+							<h2 className="section-title">Popular in Category</h2>
+						</Col>
+						<ProductsList products={sortProducts?.watch} />
 					</Row>
 				</Container>
 			</section>

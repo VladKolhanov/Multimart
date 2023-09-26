@@ -6,7 +6,7 @@ import s from './productCard.module.scss'
 
 export const ProductCard = ({ id, productName, img, category, price }) => {
 	return (
-		<Col lg="3">
+		<Col lg="3" md="4" className="mb-2">
 			<div className={s.item}>
 				<div className={s.img}>
 					<motion.img src={img} alt="product" whileHover={{ scale: 0.9 }} />

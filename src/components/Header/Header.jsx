@@ -1,16 +1,34 @@
 import { Container, Row } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 
 import s from './header.module.scss'
 import { ecoLogo, userIcon } from 'assets/images'
-import { navigation } from 'data/ui'
+import { navigation } from 'data/constants'
 
 const activeLink = ({ isActive }) => (isActive ? `${s.active}` : '')
 
 export const Header = () => {
+	const headerRef = useRef(null)
+
+	useEffect(() => {
+		const stickyHeader = window.addEventListener('scroll', () => {
+			if (
+				document.body.scrollTop > 80 ||
+				document.documentElement.scrollTop > 80
+			) {
+				headerRef.current.classList.add(s.sticky)
+			} else {
+				headerRef.current.classList.remove(s.sticky)
+			}
+		})
+
+		return () => window.removeEventListener('scroll', stickyHeader)
+	}, [])
+
 	return (
-		<header className={s.header}>
+		<header ref={headerRef} className={s.header}>
 			<Container>
 				<Row>
 					<div className={s.wrapper}>

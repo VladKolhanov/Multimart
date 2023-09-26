@@ -1,0 +1,31 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+
+	.data {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+
+		div {
+			text-align: center;
+
+			h1 {
+				color: white;
+				font-size: calc(1.3rem + 0.6vw);
+				margin-bottom: 8px;
+			}
+
+			h5 {
+				color: white;
+				font-size: 1rem;
+			}
+		}
+
+		span {
+			color: white;
+			font-size: calc(1.3rem + 0.6vw);
+		}
+	}
+}

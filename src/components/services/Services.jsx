@@ -2,7 +2,7 @@ import { Container, Row, Col } from 'reactstrap'
 import { motion } from 'framer-motion'
 
 import s from './services.module.scss'
-import { serviceData } from 'data/ui'
+import { serviceData } from 'data/constants'
 
 export const Services = () => {
 	return (
