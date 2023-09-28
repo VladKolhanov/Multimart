@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 
-export const useClock = date => {
-	const [days, setDays] = useState(0)
-	const [hours, setHours] = useState(0)
-	const [minutes, setMinutes] = useState(0)
-	const [seconds, setSeconds] = useState(0)
+export const useClock = (date: string) => {
+	const [days, setDays] = useState<number>(0)
+	const [hours, setHours] = useState<number>(0)
+	const [minutes, setMinutes] = useState<number>(0)
+	const [seconds, setSeconds] = useState<number>(0)
 
 	const countDown = () => {
 		const destination = new Date(date).getTime()
@@ -13,7 +13,7 @@ export const useClock = date => {
 			const now = new Date().getTime()
 			const different = destination - now
 
-			const s = Math.floor((different / 1000) % 60)
+			const s = +Math.floor((different / 1000) % 60)
 				.toString()
 				.padStart(2, '0')
 			const m = Math.floor((different / 1000 / 60) % 60)

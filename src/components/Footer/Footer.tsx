@@ -1,23 +1,27 @@
+import React from 'react'
 import { Col, Container, ListGroup, ListGroupItem, Row } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
 import s from './footer.module.scss'
 import { ecoLogo } from 'assets/images'
-import { footerData } from 'data/constants'
+import { TContacts, footerData } from 'data/constants'
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
 	const year = new Date().getFullYear()
 	const { topCategories, contact, usefulLinks } = footerData
 
 	const contactRender = contact.information.map((item, index) => {
-		const key = Object.keys(item)[0]
+		const key = Object.keys(item)[0] as TContacts
 
 		return (
 			<ListGroupItem key={index}>
 				<span>
 					<i className={item.icon}></i>
 				</span>
-				<p>{item[key]}</p>
+				{!item.protocol && <p>{item[key]}</p>}
+				{item.protocol && (
+					<a href={`${item.protocol}${item[key]}`}>{item[key]}</a>
+				)}
 			</ListGroupItem>
 		)
 	})

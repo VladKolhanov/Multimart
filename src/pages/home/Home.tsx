@@ -9,15 +9,24 @@ import { Helmet } from 'components/helmet/Helmet'
 import { counterTimer, heroImg } from 'assets/images'
 import { Services } from 'components/services/Services'
 import { ProductsList } from 'components/ui/ProductsList'
-import { products } from 'data/products'
+import { IProduct, products } from 'data/products'
 import { Clock } from 'components/ui/Clock'
 
+interface ISortedProducts {
+	wireless: IProduct[]
+	watch: IProduct[]
+	chair: IProduct[]
+	sofa: IProduct[]
+	mobile: IProduct[]
+	other: IProduct[]
+}
+
 export const Home = () => {
-	const [sortProducts, setSordProducts] = useState(null)
+	const [sortProducts, setSordProducts] = useState<ISortedProducts | null>(null)
 
 	useEffect(() => {
 		const filteredProducts = products.reduce(
-			(acc, product) => {
+			(acc: ISortedProducts, product) => {
 				switch (product.category) {
 					case 'wireless':
 						acc.wireless.push(product)

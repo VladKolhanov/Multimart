@@ -1,10 +1,16 @@
+import React from 'react'
 import { ProductCard } from './ProductCard'
+import { IProduct } from 'data/products'
 
-export const ProductsList = ({ products }) => {
+type ProductsListProps = {
+	products: IProduct[] | undefined
+}
+
+export const ProductsList: React.FC<ProductsListProps> = ({ products }) => {
 	return (
 		<>
 			{!products && <p>Loading products await please</p>}
-			
+
 			{products &&
 				products.map(product => (
 					<ProductCard

@@ -1,10 +1,11 @@
+import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import { motion } from 'framer-motion'
 
 import s from './services.module.scss'
 import { serviceData } from 'data/constants'
 
-export const Services = () => {
+export const Services: React.FC = () => {
 	return (
 		<section className={s.services}>
 			<Container>

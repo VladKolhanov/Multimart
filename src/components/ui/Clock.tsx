@@ -1,8 +1,10 @@
+import React from 'react'
 import s from './clock.module.scss'
 import { useClock } from 'hooks/useClock'
+import { dateLimitedOffers } from 'data/constants'
 
-export const Clock = () => {
-	const { days, hours, minutes, seconds } = useClock('Sept 30, 2023')
+export const Clock: React.FC = () => {
+	const { days, hours, minutes, seconds } = useClock(dateLimitedOffers)
 
 	return (
 		<div className={s.wrapper}>

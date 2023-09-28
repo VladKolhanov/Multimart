@@ -1,10 +1,25 @@
+import React from 'react'
 import { Col } from 'reactstrap'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
 import s from './productCard.module.scss'
 
-export const ProductCard = ({ id, productName, img, category, price }) => {
+type TProductCardProps = {
+	id: string
+	productName: string
+	img: string
+	category: string
+	price: number
+}
+
+export const ProductCard: React.FC<TProductCardProps> = ({
+	id,
+	productName,
+	img,
+	category,
+	price,
+}) => {
 	return (
 		<Col lg="3" md="4" className="mb-2">
 			<div className={s.item}>

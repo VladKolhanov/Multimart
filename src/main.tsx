@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import { RouterProvider } from 'react-router-dom'
@@ -8,9 +7,6 @@ import 'remixicon/fonts/remixicon.css'
 import './styles/global.scss'
 import { routers } from './routers/Routers'
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(
-	<React.StrictMode>
-		<RouterProvider router={routers} />
-	</React.StrictMode>
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+	<RouterProvider router={routers} />
 )

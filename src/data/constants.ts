@@ -1,3 +1,5 @@
+export const dateLimitedOffers = 'Oct 15, 2023'
+
 export const navigation = [
 	{ path: '/home', display: 'Home' },
 	{ path: '/shop', display: 'Shop' },
@@ -53,9 +55,19 @@ export const footerData = {
 	contact: {
 		title: 'Contact',
 		information: [
-			{ location: 'Lorem, ipsum dolor.', icon: 'ri-map-pin-line' },
-			{ number: '+0881234567890', icon: 'ri-phone-line' },
-			{ email: 'exampler123@gmail.com', icon: 'ri-mail-line' },
+			{
+				location: 'Lorem, ipsum dolor.',
+				icon: 'ri-map-pin-line',
+				protocol: '',
+			},
+			{ number: '+0881234567890', icon: 'ri-phone-line', protocol: 'tel:' },
+			{
+				email: 'exampler123@gmail.com',
+				icon: 'ri-mail-line',
+				protocol: 'mailto:',
+			},
 		],
 	},
 }
+
+export type TContacts = 'location' | 'number' | 'email'

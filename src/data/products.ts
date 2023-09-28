@@ -30,7 +30,23 @@ import productImg23 from '../assets/images/wireless-01.png'
 
 import productImg25 from '../assets/images/wireless-03.png'
 
-export const products = [
+export interface IProduct {
+	id: string
+	productName: string
+	imgUrl: string
+	category: string
+	price: number
+	shortDesc: string
+	description: string
+	reviews: {
+		rating: number
+		text: string
+	}[]
+
+	avgRating: number
+}
+
+export const products: IProduct[] = [
 	{
 		id: '01',
 		productName: 'Stone and Beam Westview ',
@@ -574,5 +590,3 @@ export const products = [
 		avgRating: 4.8,
 	},
 ]
-
-export default products
