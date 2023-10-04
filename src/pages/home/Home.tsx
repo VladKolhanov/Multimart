@@ -120,7 +120,7 @@ export const Home = () => {
 			<section className={s.timerCount}>
 				<Container>
 					<Row>
-						<Col lg="6" md="6">
+						<Col lg="6" md="12" className={s.countDownCol}>
 							<div className={s.topContent}>
 								<h4>Limited Offers</h4>
 								<h3>Quality Armchair</h3>
@@ -136,7 +136,7 @@ export const Home = () => {
 							</motion.button>
 						</Col>
 
-						<Col lg="6" md="6" className="text-end">
+						<Col lg="6" md="12" className={`text-end ${s.counterImg}`}>
 							<img src={counterTimer} alt="counter" />
 						</Col>
 					</Row>

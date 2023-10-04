@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
 		<footer className={s.footer}>
 			<Container>
 				<Row>
-					<Col lg="4">
+					<Col lg="4" md="6" className="mb-4 ">
 						<div className={s.logo}>
 							<img src={ecoLogo} alt="logo website" />
 							<div>
@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
 						</p>
 					</Col>
 
-					<Col lg="3">
+					<Col lg="3" md="3" className="mb-4">
 						<div className={s.quickLinks}>
 							<h4 className={s.quickLinksTitle}>{topCategories.title}</h4>
 							<ListGroup>
@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
 						</div>
 					</Col>
 
-					<Col lg="2">
+					<Col lg="2" md="3" className="mb-4">
 						<div className={s.quickLinks}>
 							<h4 className={s.quickLinksTitle}>{usefulLinks.title}</h4>
 							<ListGroup>
@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
 						</div>
 					</Col>
 
-					<Col lg="3">
+					<Col lg="3" md="4">
 						<div className={`${s.quickLinks} ${s.contat}`}>
 							<h4 className={s.quickLinksTitle}>{contact.title}</h4>
 							<ListGroup>{contactRender}</ListGroup>

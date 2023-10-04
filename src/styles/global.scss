@@ -53,9 +53,18 @@ img {
 
 section {
 	padding: 60px 0px;
+	@include mobile {
+		padding: 40px 0px;
+	}
 }
 
 .section-title {
 	color: $primary-color;
 	font-weight: 600;
+	@include lg {
+		font-size: 1.7rem;
+	}
+	@include mobile {
+		font-size: 1.4rem;
+	}
 }

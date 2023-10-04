@@ -6,7 +6,10 @@ import 'remixicon/fonts/remixicon.css'
 
 import './styles/global.scss'
 import { routers } from './routers/Routers'
+import { ScreenWidthProvider } from 'context/ScreenWidthContext'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-	<RouterProvider router={routers} />
+	<ScreenWidthProvider>
+		<RouterProvider router={routers} />
+	</ScreenWidthProvider>
 )

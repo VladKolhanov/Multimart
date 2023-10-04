@@ -1,17 +1,24 @@
 import { Container, Row } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
-import React, { useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
+import React, { useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import s from './header.module.scss'
 import { ecoLogo, userIcon } from 'assets/images'
 import { navigation } from 'data/constants'
+import { useScreenWidth } from 'context/ScreenWidthContext'
 
 const activeLink = ({ isActive }: { isActive: boolean }) =>
 	isActive ? `${s.active}` : ''
 
 export const Header: React.FC = () => {
+	const { orientation } = useScreenWidth()
+	const [isMobileMenu, setIsMobileMenu] = useState<boolean>(false)
 	const headerRef = useRef<HTMLElement>(null)
+
+	const menuToggle = () => {
+		setIsMobileMenu(p => !p)
+	}
 
 	useEffect(() => {
 		const onScroll: EventListener = () => {
@@ -37,17 +44,34 @@ export const Header: React.FC = () => {
 							</div>
 						</div>
 
-						<div className={s.navigation}>
-							<ul className={s.menu}>
-								{navigation.map(link => (
-									<li key={link.path} className={s.menuItem}>
-										<NavLink to={link.path} className={activeLink}>
-											{link.display}
-										</NavLink>
-									</li>
-								))}
-							</ul>
-						</div>
+						<AnimatePresence>
+							{(isMobileMenu || orientation === 'desktop') && (
+								<motion.nav
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									exit={{ opacity: 0 }}
+									transition={{ duration: 0.3 }}
+									className={s.navigation}
+									onClick={menuToggle}
+								>
+									<motion.ul
+										initial={{ x: '100%', opacity: 0.5 }}
+										animate={{ x: 0, opacity: 1 }}
+										exit={{ x: '100%', opacity: 0.5 }}
+										transition={{ duration: 0.3 }}
+										className={s.menu}
+									>
+										{navigation.map(link => (
+											<li key={link.path} className={s.menuItem}>
+												<NavLink to={link.path} className={activeLink}>
+													{link.display}
+												</NavLink>
+											</li>
+										))}
+									</motion.ul>
+								</motion.nav>
+							)}
+						</AnimatePresence>
 
 						<div className={s.icons}>
 							<span className={s.icon}>
@@ -66,12 +90,14 @@ export const Header: React.FC = () => {
 									alt="current user icon"
 								/>
 							</span>
-						</div>
 
-						<div className={s.mobileMenu}>
-							<span>
-								<i className="ri-menu-line" />
-							</span>
+							{orientation === 'mobile' && (
+								<div className={s.mobileMenu} onClick={menuToggle}>
+									<span>
+										<i className="ri-menu-line" />
+									</span>
+								</div>
+							)}
 						</div>
 					</div>
 				</Row>
