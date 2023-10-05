@@ -7,6 +7,7 @@ import s from './header.module.scss'
 import { ecoLogo, userIcon } from 'assets/images'
 import { navigation } from 'data/constants'
 import { useScreenWidth } from 'context/ScreenWidthContext'
+import { useAppSelector } from 'hooks/useAppSelector'
 
 const activeLink = ({ isActive }: { isActive: boolean }) =>
 	isActive ? `${s.active}` : ''
@@ -15,6 +16,8 @@ export const Header: React.FC = () => {
 	const { orientation } = useScreenWidth()
 	const [isMobileMenu, setIsMobileMenu] = useState<boolean>(false)
 	const headerRef = useRef<HTMLElement>(null)
+
+	const totalQuantity = useAppSelector(state => state.cart.totalQuantity)
 
 	const menuToggle = () => {
 		setIsMobileMenu(p => !p)
@@ -80,7 +83,7 @@ export const Header: React.FC = () => {
 							</span>
 							<span className={s.icon}>
 								<i className="ri-shopping-bag-line" />
-								<span className={s.badge}>2</span>
+								<span className={s.badge}>{totalQuantity}</span>
 							</span>
 
 							<span>

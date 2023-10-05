@@ -15,7 +15,8 @@
 			"pages/*": ["pages/*"],
 			"routes/*": ["routes/*"],
 			"styles/*": ["styles/*"],
-			"context/*": ["context/*"]
+			"context/*": ["context/*"],
+			"store/*": ["store/*"]
 		},
 
 		/* Bundler mode */
