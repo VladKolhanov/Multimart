@@ -1,11 +1,13 @@
 export const dateLimitedOffers = 'Oct 15, 2023'
 
+// Navbar
 export const navigation = [
 	{ path: '/home', display: 'Home' },
 	{ path: '/shop', display: 'Shop' },
 	{ path: '/cart', display: 'Cart' },
 ]
 
+// Service component
 export const serviceData = [
 	{
 		icon: 'ri-truck-line',
@@ -33,6 +35,7 @@ export const serviceData = [
 	},
 ]
 
+// Footer component
 export const footerData = {
 	topCategories: {
 		title: 'Top Categories',
@@ -71,3 +74,25 @@ export const footerData = {
 }
 
 export type TContacts = 'location' | 'number' | 'email'
+
+// Shop page component
+export const selectCategory = {
+	name: 'category',
+	options: [
+		{ value: 'all', display: 'Filter By Category' },
+		{ value: 'sofa', display: 'Sofa' },
+		{ value: 'mobile', display: 'Mobile' },
+		{ value: 'chair', display: 'Chair' },
+		{ value: 'watch', display: 'Watch' },
+		{ value: 'wireless', display: 'Wireless' },
+	],
+}
+
+export const selectSort = {
+	name: 'sort',
+	options: [
+		{ value: 'all', display: 'Sort By' },
+		{ value: 'ascending', display: 'Ascending' },
+		{ value: 'descending', display: 'Descending' },
+	],
+}

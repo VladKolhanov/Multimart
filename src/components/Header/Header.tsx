@@ -83,7 +83,9 @@ export const Header: React.FC = () => {
 							</span>
 							<span className={s.icon}>
 								<i className="ri-shopping-bag-line" />
-								<span className={s.badge}>{totalQuantity}</span>
+								{!!totalQuantity && (
+									<span className={s.badge}>{totalQuantity}</span>
+								)}
 							</span>
 
 							<span>
