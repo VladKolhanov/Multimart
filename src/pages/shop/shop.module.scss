@@ -1,6 +1,15 @@
 @import 'styles/variables.scss';
+@import 'styles/responsive.scss';
+
+// .right {
+// 	text-align: right;
+// }
 
 .widget {
+	@include mobile {
+		margin-bottom: 30px;
+	}
+
 	select {
 		padding: 8px 20px;
 		border: 1px solid $primary-color;
@@ -8,6 +17,10 @@
 		border-radius: 5px;
 		background: $primary-color;
 		color: #fff;
+		@include mobile {
+			padding: 7px 20px;
+			font-size: 0.9rem;
+		}
 
 		&:focus {
 			outline: none !important;

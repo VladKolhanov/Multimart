@@ -109,7 +109,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.7,
+		avgRating: 3.7,
 	},
 	{
 		id: '26',
@@ -131,7 +131,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.7,
+		avgRating: 3.2,
 	},
 	{
 		id: '04',
@@ -153,7 +153,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.7,
+		avgRating: 4.2,
 	},
 
 	{
@@ -176,7 +176,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.7,
+		avgRating: 2.7,
 	},
 
 	{
@@ -199,7 +199,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.7,
+		avgRating: 2.7,
 	},
 	{
 		id: '07',
@@ -221,7 +221,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.7,
+		avgRating: 3.7,
 	},
 
 	{
@@ -244,7 +244,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.7,
+		avgRating: 1.2,
 	},
 
 	{
@@ -267,7 +267,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.7,
+		avgRating: 2.4,
 	},
 
 	{
@@ -290,7 +290,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.7,
+		avgRating: 3.3,
 	},
 
 	{
@@ -313,7 +313,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.8,
+		avgRating: 3.6,
 	},
 	{
 		id: '25',
@@ -335,7 +335,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.7,
+		avgRating: 1.2,
 	},
 	{
 		id: '11',
@@ -357,7 +357,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.8,
+		avgRating: 1.8,
 	},
 
 	{
@@ -380,7 +380,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.8,
+		avgRating: 2.9,
 	},
 
 	{
@@ -403,7 +403,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.8,
+		avgRating: 3.4,
 	},
 
 	{
@@ -426,7 +426,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.8,
+		avgRating: 3.9,
 	},
 
 	{
@@ -449,7 +449,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.8,
+		avgRating: 4.4,
 	},
 
 	{
@@ -472,7 +472,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.8,
+		avgRating: 1.2,
 	},
 
 	{
@@ -495,7 +495,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.8,
+		avgRating: 1.8,
 	},
 
 	{
@@ -518,7 +518,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.8,
+		avgRating: 2.9,
 	},
 
 	{
@@ -541,7 +541,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.8,
+		avgRating: 3.3,
 	},
 
 	{
@@ -564,7 +564,7 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.8,
+		avgRating: 3.7,
 	},
 
 	{
@@ -587,6 +587,6 @@ export const products: IProduct[] = [
 				text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 			},
 		],
-		avgRating: 4.8,
+		avgRating: 4.1,
 	},
 ]

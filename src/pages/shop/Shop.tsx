@@ -65,7 +65,7 @@ export const Shop: FC = () => {
 			<section>
 				<Container>
 					<Row>
-						<Col lg="3" md="3">
+						<Col lg="3" md="6">
 							<div className={s.widget}>
 								<select name={selectCategory.name} onChange={handleFilter}>
 									{selectCategory.options.map((option, index) => (
@@ -77,7 +77,7 @@ export const Shop: FC = () => {
 							</div>
 						</Col>
 
-						<Col lg="3" md="3">
+						<Col lg="3" md="6">
 							<div className={s.widget}>
 								<select name="sort" onChange={handleSort}>
 									{selectSort.options.map((option, index) => (
@@ -89,7 +89,7 @@ export const Shop: FC = () => {
 							</div>
 						</Col>
 
-						<Col lg="6" md="6">
+						<Col lg="6" md="12">
 							<div className={s.search}>
 								<input
 									type="text"

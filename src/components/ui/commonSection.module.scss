@@ -1,10 +1,18 @@
+@import 'styles/responsive.scss';
+
 .section {
 	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 		url('assets/images/homeBg.webp') no-repeat center center/cover;
 	padding: 100px 0px;
+	@include mobile {
+		padding: 70px 0;
+	}
 
 	h1 {
 		color: #fff;
 		font-weight: 600;
+		@include mobile {
+			font-size: 1.4rem;
+		}
 	}
 }
