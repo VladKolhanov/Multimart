@@ -1,10 +1,6 @@
 @import 'styles/variables.scss';
 @import 'styles/responsive.scss';
 
-// .right {
-// 	text-align: right;
-// }
-
 .widget {
 	@include mobile {
 		margin-bottom: 30px;

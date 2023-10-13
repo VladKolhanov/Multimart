@@ -55,9 +55,34 @@ const cartSlice = createSlice({
 				return total
 			}, 0)
 		},
+
+		deleteItem: (state, action: PayloadAction<string>) => {
+			const id = action.payload
+
+			state.cartItems = state.cartItems.reduce((acc: TCartItem[], product) => {
+				if (product.id !== id) {
+					acc.push(product)
+				}
+
+				if (product.id === id && product.quantity > 1) {
+					product.quantity--
+					acc.push(product)
+				}
+
+				return acc
+			}, [])
+
+			state.totalQuantity = state.cartItems.length
+
+			state.totalAmount = state.cartItems.reduce((total, item) => {
+				total += item.price * item.quantity
+
+				return total
+			}, 0)
+		},
 	},
 })
 
-export const { addItem } = cartSlice.actions
+export const { addItem, deleteItem } = cartSlice.actions
 
 export default cartSlice.reducer

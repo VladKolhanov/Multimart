@@ -1,5 +1,5 @@
 import { Container, Row } from 'reactstrap'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import React, { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
@@ -81,12 +81,12 @@ export const Header: React.FC = () => {
 								<i className="ri-heart-line" />
 								<span className={s.badge}>1</span>
 							</span>
-							<span className={s.icon}>
+							<Link to="/cart" className={s.icon}>
 								<i className="ri-shopping-bag-line" />
 								{!!totalQuantity && (
 									<span className={s.badge}>{totalQuantity}</span>
 								)}
-							</span>
+							</Link>
 
 							<span>
 								<motion.img
