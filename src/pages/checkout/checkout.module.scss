@@ -1,0 +1,51 @@
+@import 'styles/variables.scss';
+
+.subtitle {
+	margin-bottom: 20px;
+	font-weight: 500;
+}
+
+.billingForm {
+	.formGroup {
+		input {
+			width: 100%;
+			border: 1px solid $card-bg-02;
+			padding: 7px 0px 7px 15px;
+		}
+	}
+}
+
+.checkout {
+	.checkoutCart {
+		padding: 20px;
+		background: $primary-color;
+		color: #fff;
+		border-radius: 5px;
+
+		h4,
+		h6 {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		h4 {
+			border-top: 1px solid rgba(221, 221, 221, 0.253);
+			padding-top: 20px;
+		}
+
+		h6 {
+			margin-bottom: 20px;
+		}
+	}
+
+	.btn {
+		width: 100%;
+		background: #fff;
+		color: $primary-color;
+		font-weight: 600;
+		padding: 8px 20px;
+		border-radius: 5px;
+		margin-top: 40px;
+	}
+}

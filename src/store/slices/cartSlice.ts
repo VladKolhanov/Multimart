@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import { RootState } from 'store/store'
 
 export type TCartItem = {
 	id: string
@@ -82,6 +83,10 @@ const cartSlice = createSlice({
 		},
 	},
 })
+
+export const getTotalQuantity = (state: RootState) => state.cart.totalQuantity
+
+export const getTotalAmount = (state: RootState) => state.cart.totalAmount
 
 export const { addItem, deleteItem } = cartSlice.actions
 
