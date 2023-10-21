@@ -1,0 +1,64 @@
+@import 'styles/variables.scss';
+
+.login {
+	margin: 0 auto;
+	text-align: center;
+
+	h3 {
+		font-weight: 600;
+		font-size: 2rem;
+		margin-bottom: 20px;
+	}
+
+	.form {
+		background: $primary-color;
+		padding: 40px;
+		border-radius: 5px;
+
+		.formGroup {
+			input {
+				width: 100%;
+				padding: 7px 0px 7px 15px;
+				border-radius: 5px;
+			}
+
+			input[type='file'] {
+				color: #fff;
+				cursor: pointer;
+			}
+		}
+
+		p {
+			margin-top: 30px;
+
+			a {
+				color: #ffffffa9;
+			}
+		}
+	}
+}
+
+.loading {
+	text-align: center;
+
+	h6 {
+		font-weight: bold;
+		font-size: 3rem;
+	}
+}
+
+.btn {
+	border: none;
+	outline: none;
+	padding: 8px 20px;
+	border-radius: 5px;
+	background: #fff;
+	color: $primary-color;
+	font-size: 1rem;
+	margin-top: 40px;
+	font-weight: 600;
+
+	&:hover {
+		background-color: #ade1eb;
+	}
+}

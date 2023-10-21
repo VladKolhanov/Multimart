@@ -6,6 +6,7 @@ export default defineConfig({
 	plugins: [react()],
 	resolve: {
 		alias: {
+			fireBase: '/src/fireBase',
 			assets: '/src/assets',
 			components: '/src/components',
 			data: '/src/data',

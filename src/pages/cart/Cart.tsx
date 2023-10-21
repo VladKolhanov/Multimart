@@ -9,11 +9,13 @@ import { CommonSection } from 'components/ui/CommonSection'
 import { useAppSelector } from 'hooks/useAppSelector'
 import { useAppDispatch } from 'hooks/useAppDispatch'
 import { deleteItem } from 'store/slices/cartSlice'
+import { useAuth } from 'hooks/useAuth'
 
 export const Cart: React.FC = () => {
 	const cartItems = useAppSelector(state => state.cart.cartItems)
 	const totalAmount = useAppSelector(state => state.cart.totalAmount)
 	const dispatch = useAppDispatch()
+	const { currentUser } = useAuth()
 
 	const handleDeleteProduct = (id: string) => {
 		dispatch(deleteItem(id))
@@ -77,7 +79,10 @@ export const Cart: React.FC = () => {
 								taxes and shipping will calculate in checkout
 							</p>
 							<div>
-								<Link className={s.btn} to="/checkout">
+								<Link
+									className={s.btn}
+									to={currentUser ? '/checkout' : '/login'}
+								>
 									Checkout
 								</Link>
 

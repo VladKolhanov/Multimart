@@ -59,7 +59,7 @@ export const Shop: FC = () => {
 	}
 
 	return (
-		<Helmet title="Home">
+		<Helmet title="Shop">
 			<CommonSection title="Products" />
 
 			<section>

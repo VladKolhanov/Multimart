@@ -113,14 +113,54 @@
 				}
 			}
 
-			span {
+			.profile {
+				position: relative;
+				z-index: 9;
+
 				img {
 					width: 30px;
 					height: 30px;
 					cursor: pointer;
+					border-radius: 50%;
+					object-fit: cover;
 					@include mobile {
 						width: 1.4rem;
 						height: 1.4rem;
+					}
+				}
+
+				.profileActions {
+					position: absolute;
+					top: 102%;
+					left: -30px;
+					width: 120px;
+					z-index: 10;
+					padding: 15px;
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+					justify-content: space-between;
+					background: $card-bg-01;
+					line-height: 30px;
+					cursor: pointer;
+					transition: background 0.5s ease-in-out;
+					@include mobile {
+						width: 80px;
+						padding: 7px;
+					}
+
+					&:hover {
+						background: #f0e7e7;
+						transition: background 0.5s ease-in-out;
+					}
+
+					span,
+					a {
+						display: inline-block;
+						&:hover {
+							text-decoration: underline;
+							font-weight: 600;
+						}
 					}
 				}
 			}

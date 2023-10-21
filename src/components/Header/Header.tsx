@@ -1,13 +1,17 @@
 import { Container, Row } from 'reactstrap'
 import { Link, NavLink } from 'react-router-dom'
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { signOut } from 'firebase/auth'
+import { auth } from 'fireBase/firebase.config'
+import { toast } from 'react-toastify'
 
 import s from './header.module.scss'
 import { ecoLogo, userIcon } from 'assets/images'
 import { navigation } from 'data/constants'
 import { useScreenWidth } from 'context/ScreenWidthContext'
 import { useAppSelector } from 'hooks/useAppSelector'
+import { useAuth } from 'hooks/useAuth'
 
 const activeLink = ({ isActive }: { isActive: boolean }) =>
 	isActive ? `${s.active}` : ''
@@ -15,12 +19,27 @@ const activeLink = ({ isActive }: { isActive: boolean }) =>
 export const Header: React.FC = () => {
 	const { orientation } = useScreenWidth()
 	const [isMobileMenu, setIsMobileMenu] = useState<boolean>(false)
+	const [isProfileActive, setIsProfileActive] = useState<boolean>(false)
 	const headerRef = useRef<HTMLElement>(null)
+	const { currentUser } = useAuth()
 
 	const totalQuantity = useAppSelector(state => state.cart.totalQuantity)
 
 	const menuToggle = () => {
 		setIsMobileMenu(p => !p)
+	}
+
+	const handleProfileActionsToggle = () => {
+		setIsProfileActive(p => !p)
+	}
+
+	const handleLogout = async () => {
+		try {
+			await signOut(auth)
+			toast.success('Logged out')
+		} catch (error) {
+			toast.error('Error')
+		}
 	}
 
 	useEffect(() => {
@@ -34,6 +53,19 @@ export const Header: React.FC = () => {
 
 		return () => window.removeEventListener('scroll', onScroll)
 	}, [])
+
+	const currentUserPhotoRender = currentUser
+		? (currentUser.photoURL as string)
+		: userIcon
+
+	const appearActionsOnProfileRender = currentUser ? (
+		<span onClick={handleLogout}>Logout</span>
+	) : (
+		<div>
+			<Link to="/signup">Signup</Link>
+			<Link to="/login">Login</Link>
+		</div>
+	)
 
 	return (
 		<header ref={headerRef} className={s.header}>
@@ -81,6 +113,7 @@ export const Header: React.FC = () => {
 								<i className="ri-heart-line" />
 								<span className={s.badge}>1</span>
 							</span>
+
 							<Link to="/cart" className={s.icon}>
 								<i className="ri-shopping-bag-line" />
 								{!!totalQuantity && (
@@ -88,13 +121,23 @@ export const Header: React.FC = () => {
 								)}
 							</Link>
 
-							<span>
+							<div className={s.profile}>
 								<motion.img
 									whileTap={{ scale: 1.2 }}
-									src={userIcon}
+									src={currentUserPhotoRender}
 									alt="current user icon"
+									onClick={handleProfileActionsToggle}
 								/>
-							</span>
+
+								{isProfileActive && (
+									<div
+										className={s.profileActions}
+										onClick={handleProfileActionsToggle}
+									>
+										{appearActionsOnProfileRender}
+									</div>
+								)}
+							</div>
 
 							{orientation === 'mobile' && (
 								<div className={s.mobileMenu} onClick={menuToggle}>

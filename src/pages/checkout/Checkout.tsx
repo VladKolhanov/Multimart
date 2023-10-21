@@ -7,6 +7,7 @@ import { Helmet } from '../../components/helmet/Helmet'
 import { CommonSection } from 'components/ui/CommonSection'
 import { useAppSelector } from 'hooks/useAppSelector'
 import { getTotalAmount, getTotalQuantity } from 'store/slices/cartSlice'
+import { checkoutForm } from 'data/constants'
 
 export const Checkout: FC = () => {
 	const totalQty = useAppSelector(getTotalQuantity)
@@ -22,33 +23,11 @@ export const Checkout: FC = () => {
 						<Col lg="8">
 							<h6 className={s.subtitle}>Billing Information</h6>
 							<Form className={s.billingForm}>
-								<FormGroup className={s.formGroup}>
-									<input type="text" placeholder="Enter your name" />
-								</FormGroup>
-
-								<FormGroup className={s.formGroup}>
-									<input type="email" placeholder="Enter your email" />
-								</FormGroup>
-
-								<FormGroup className={s.formGroup}>
-									<input type="number" placeholder="Phone number" />
-								</FormGroup>
-
-								<FormGroup className={s.formGroup}>
-									<input type="text" placeholder="Street address" />
-								</FormGroup>
-
-								<FormGroup className={s.formGroup}>
-									<input type="text" placeholder="City" />
-								</FormGroup>
-
-								<FormGroup className={s.formGroup}>
-									<input type="text" placeholder="Postal code" />
-								</FormGroup>
-
-								<FormGroup className={s.formGroup}>
-									<input type="text" placeholder="Country" />
-								</FormGroup>
+								{checkoutForm.map(field => (
+									<FormGroup key={field.name} className={s.formGroup}>
+										<input {...field} />
+									</FormGroup>
+								))}
 							</Form>
 						</Col>
 

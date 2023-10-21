@@ -96,3 +96,58 @@ export const selectSort = {
 		{ value: 'descending', display: 'Descending' },
 	],
 }
+
+// Checkout form
+
+export const checkoutForm = [
+	{
+		type: 'text',
+		placeholder: 'Enter your name',
+		name: 'name',
+		autoComplete: 'name',
+		required: true,
+		autoFocus: true,
+	},
+	{
+		type: 'email',
+		placeholder: 'Enter your email',
+		name: 'email',
+		required: true,
+		autoComplete: 'email',
+	},
+	{
+		type: 'tel',
+		placeholder: 'Phone number',
+		name: 'phone-number',
+		autoComplete: 'tel',
+		required: true,
+	},
+	{
+		type: 'text',
+		placeholder: 'Country',
+		name: 'country',
+		autoComplete: 'country-name',
+		required: true,
+	},
+	{
+		type: 'text',
+		placeholder: 'City',
+		name: 'city',
+		autoComplete: 'address-level2',
+		required: true,
+	},
+	{
+		type: 'text',
+		placeholder: 'Street address',
+		name: 'street',
+		autoComplete: 'street-address',
+		required: true,
+	},
+	{
+		type: 'text',
+		placeholder: 'Postal code',
+		name: 'postal-code',
+		autoComplete: 'postal-code',
+		required: true,
+	},
+]
