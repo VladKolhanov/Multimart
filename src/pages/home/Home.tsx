@@ -9,8 +9,9 @@ import { Helmet } from 'components/helmet/Helmet'
 import { counterTimer, heroImg } from 'assets/images'
 import { Services } from 'components/services/Services'
 import { ProductsList } from 'components/ui/ProductsList'
-import { IProduct, products } from 'data/products'
+import { IProduct } from 'data/products'
 import { Clock } from 'components/ui/Clock'
+import { IProductsCollections, useGetData } from 'hooks/useGetData'
 
 interface ISortedProducts {
 	wireless: IProduct[]
@@ -24,8 +25,10 @@ interface ISortedProducts {
 export const Home = () => {
 	const [sortProducts, setSordProducts] = useState<ISortedProducts | null>(null)
 
+	const products = useGetData('products') as IProductsCollections[]
+
 	useEffect(() => {
-		const filteredProducts = products.reduce(
+		const filteredProducts = products?.reduce(
 			(acc: ISortedProducts, product) => {
 				switch (product.category) {
 					case 'wireless':
@@ -60,7 +63,7 @@ export const Home = () => {
 		)
 
 		setSordProducts(filteredProducts)
-	}, [])
+	}, [products])
 
 	const year = new Date().getFullYear()
 

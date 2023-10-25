@@ -13,6 +13,10 @@ import { ProductDetails } from 'pages/productDetails/ProductDetails'
 import { Shop } from 'pages/shop/Shop'
 import { Signup } from 'pages/signUp/Signup'
 import { ProtectedRoute } from './ProtectedRoute'
+import { AddProduct } from 'admin/AddProduct'
+import { AllProducts } from 'admin/AllProducts'
+import { Dashboard } from 'admin/Dashboard'
+import { Users } from 'admin/Users'
 
 export const routers = createBrowserRouter(
 	createRoutesFromChildren(
@@ -31,6 +35,12 @@ export const routers = createBrowserRouter(
 			<Route path="checkout" element={<Checkout />} />,
 			<Route path="login" element={<Login />} />,
 			<Route path="signup" element={<Signup />} />,
+			<Route path="dashboard" element={<Dashboard />}>
+				<Route index element={<AddProduct />} />,
+				<Route path="all-products" element={<AllProducts />} />,
+				<Route path="users" element={<Users />} />,
+			</Route>
+			,
 		</Route>
 	)
 )

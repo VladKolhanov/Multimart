@@ -1,0 +1,94 @@
+@import 'styles/variables.scss';
+
+.admin {
+	width: 100%;
+	padding: 20px 0px;
+	background: $primary-color;
+
+	.navTop {
+		width: 100%;
+
+		.navWrapper {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			column-gap: 2rem;
+
+			.logo {
+				h2 {
+					font-size: 1.2rem;
+					color: whitesmoke;
+				}
+			}
+
+			.searchBox {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+
+				input {
+					padding: 10px;
+					width: 100%;
+					outline: none;
+				}
+			}
+
+			.navTopRight {
+				display: flex;
+				align-items: center;
+				column-gap: 2rem;
+
+				button {
+					background: transparent;
+					border: none;
+					i {
+						color: whitesmoke;
+					}
+				}
+
+				img {
+					width: 40px;
+					height: 40px;
+					border-radius: 50%;
+					object-fit: cover;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+.adminMenu {
+	padding: 0;
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+	background: $card-bg-02;
+
+	.menuNavigation {
+		text-align: center;
+
+		.menuList {
+			display: flex;
+			align-items: center;
+			column-gap: 2.7rem;
+			justify-content: center;
+
+			.menuItem {
+				a {
+					color: $primary-color;
+					font-weight: 500;
+					padding: 10px 15px;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+}
+
+// utils
+
+.active {
+	background: whitesmoke;
+}

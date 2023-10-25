@@ -1,0 +1,43 @@
+@import 'styles/variables.scss';
+
+.table {
+	td,
+	th {
+		color: $primary-color;
+	}
+
+	img {
+		width: 80px;
+		height: 80px;
+		object-fit: cover;
+	}
+}
+
+.btn {
+	border: none;
+	outline: none;
+	padding: 8px 20px;
+	border-radius: 5px;
+	background: #e61818;
+	color: #fff;
+	cursor: pointer;
+	font-size: 1rem;
+	margin-top: 40px;
+
+	&:hover {
+		background-color: #b84e1e;
+	}
+}
+
+.notProducts {
+	font-size: 3rem;
+	text-align: center;
+	font-weight: bold;
+}
+
+.loader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 100px 0;
+}

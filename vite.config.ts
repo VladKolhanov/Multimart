@@ -6,6 +6,7 @@ export default defineConfig({
 	plugins: [react()],
 	resolve: {
 		alias: {
+			admin: '/src/admin',
 			fireBase: '/src/fireBase',
 			assets: '/src/assets',
 			components: '/src/components',
@@ -17,6 +18,7 @@ export default defineConfig({
 			styles: '/src/styles',
 			context: '/src/context',
 			store: '/src/store',
+			types: '/src/types',
 		},
 	},
 })

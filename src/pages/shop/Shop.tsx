@@ -1,21 +1,28 @@
-import { FC, ChangeEvent, useState } from 'react'
+import { FC, ChangeEvent, useState, useEffect } from 'react'
 
 import { Col, Container, Row } from 'reactstrap'
 
 import s from './shop.module.scss'
 import { Helmet } from 'components/helmet/Helmet'
 import { CommonSection } from 'components/ui/CommonSection'
-import { IProduct, products } from 'data/products'
 import { ProductsList } from 'components/ui/ProductsList'
 import { selectCategory, selectSort } from 'data/constants'
+import { useGetData } from 'hooks/useGetData'
+import { IProduct } from 'types/types'
 
 export const Shop: FC = () => {
-	const [productsData, setProductsData] = useState<IProduct[]>(products)
+	const [productsData, setProductsData] = useState<IProduct[] | null>(null)
+
+	const productsFromFirebase = useGetData('products') as IProduct[]
+
+	useEffect(() => {
+		setProductsData(productsFromFirebase)
+	}, [productsFromFirebase])
 
 	const handleFilter = (e: ChangeEvent<HTMLSelectElement>) => {
 		const filterValue = e.target.value
 
-		const filteredProducts = products.filter(product => {
+		const filteredProducts = productsFromFirebase.filter(product => {
 			if (filterValue === 'all') {
 				return product
 			}
@@ -31,7 +38,7 @@ export const Shop: FC = () => {
 	const handleSort = (e: ChangeEvent<HTMLSelectElement>) => {
 		const sortValue = e.target.value
 
-		let sortProducts: IProduct[] = []
+		let sortProducts: IProduct[] | null = []
 
 		if (sortValue === 'all') {
 			sortProducts = productsData
@@ -51,7 +58,7 @@ export const Shop: FC = () => {
 	const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
 		const searchTerm = e.target.value
 
-		const searchProducts = products.filter(product =>
+		const searchProducts = productsFromFirebase.filter(product =>
 			product.productName.toLowerCase().includes(searchTerm.toLowerCase())
 		)
 
@@ -108,7 +115,7 @@ export const Shop: FC = () => {
 			<section className={s.products}>
 				<Container>
 					<Row>
-						{productsData.length === 0 && (
+						{!productsData && (
 							<h1 className={s.noProducts}>No products are found!</h1>
 						)}
 						{productsData && <ProductsList products={productsData} />}

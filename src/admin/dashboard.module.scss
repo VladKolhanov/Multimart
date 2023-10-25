@@ -1,0 +1,37 @@
+@import 'styles/variables.scss';
+
+.dashboard {
+	& > div > div {
+		padding: 20px;
+		border-radius: 5px;
+
+		h5 {
+			font-size: 1.1rem;
+			font-weight: bold;
+			color: $primary-color;
+			margin-bottom: 20px;
+		}
+
+		span {
+			color: $primary-color;
+			font-weight: 600;
+			font-size: 2rem;
+		}
+	}
+
+	.revenueBox {
+		background: $card-bg-01;
+	}
+
+	.orderBox {
+		background: $card-bg-02;
+	}
+
+	.productsBox {
+		background: $card-bg-03;
+	}
+
+	.usersBox {
+		background: $card-bg-04;
+	}
+}

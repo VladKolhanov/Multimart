@@ -1,10 +1,17 @@
-export const dateLimitedOffers = 'Oct 15, 2023'
+export const dateLimitedOffers = 'Oct 30, 2023'
 
-// Navbar
+// Navbars
 export const navigation = [
 	{ path: '/home', display: 'Home' },
 	{ path: '/shop', display: 'Shop' },
 	{ path: '/cart', display: 'Cart' },
+]
+
+export const adminNavigation = [
+	{ path: 'dashboard', display: 'Dashboard' },
+	{ path: 'dashboard/all-products', display: 'All-Products' },
+	// { path: 'dashboard/orders', display: 'Orders' },
+	{ path: 'dashboard/users', display: 'Users' },
 ]
 
 // Service component
